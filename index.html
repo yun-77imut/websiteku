@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieGo - Pemesanan Makanan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2 class="logo">FoodieGo.</h2>
+        <nav>
+            <a href="#beranda">Beranda</a>
+            <a href="#menu">Menu</a>
+            <a href="#pesan">Pesan</a>
+            <a href="#pesanan">Daftar Pesanan</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="beranda">
+        <div>
+            <p>SELAMAT DATANG DI FOODIEGO</p>
+            <h1>Makanan Lezat,<br>Pesan Lebih Mudah!</h1>
+            <p>Pilih makanan favoritmu dan pesan dengan mudah.</p>
+            <a class="btn" href="#menu">Lihat Menu</a>
+        </div>
+        <div class="hero-icon">🍔</div>
+    </section>
+
+    <section class="section" id="menu">
+        <h2>Menu Makanan</h2>
+        <p>Pilih menu favoritmu.</p>
+
+        <div class="menu-container">
+            <div class="menu-card">
+                <div class="food-icon">🍔</div>
+                <h3>Beef Burger</h3>
+                <p>Rp25.000</p>
+                <button onclick="pilihMenu('Beef Burger')">Pesan</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="food-icon">🍗</div>
+                <h3>Ayam Crispy</h3>
+                <p>Rp20.000</p>
+                <button onclick="pilihMenu('Ayam Crispy')">Pesan</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="food-icon">🍜</div>
+                <h3>Mie Spesial</h3>
+                <p>Rp18.000</p>
+                <button onclick="pilihMenu('Mie Spesial')">Pesan</button>
+            </div>
+
+            <div class="menu-card">
+                <div class="food-icon">🥤</div>
+                <h3>Es Teh</h3>
+                <p>Rp5.000</p>
+                <button onclick="pilihMenu('Es Teh')">Pesan</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section form-section" id="pesan">
+        <h2>Form Pemesanan</h2>
+
+        <form id="orderForm">
+            <label>Nama Pemesan</label>
+            <input type="text" id="nama" required
+                   placeholder="Masukkan nama">
+
+            <label>Menu Makanan</label>
+            <select id="menuMakanan" required>
+                <option value="">Pilih makanan</option>
+                <option value="Beef Burger">Beef Burger</option>
+                <option value="Ayam Crispy">Ayam Crispy</option>
+                <option value="Mie Spesial">Mie Spesial</option>
+                <option value="Es Teh">Es Teh</option>
+            </select>
+
+            <label>Jumlah Pesanan</label>
+            <input type="number" id="jumlah" min="1"
+                   max="100" value="1" required>
+
+            <label>Metode Pembayaran</label>
+            <select id="pembayaran" required>
+                <option value="">Pilih pembayaran</option>
+                <option value="Tunai">Tunai</option>
+                <option value="Transfer">Transfer</option>
+                <option value="QRIS">QRIS</option>
+            </select>
+
+            <button type="submit">Tambahkan Pesanan</button>
+        </form>
+    </section>
+
+    <section class="section" id="pesanan">
+        <h2>Daftar Pesanan</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Nama</th>
+                        <th>Menu</th>
+                        <th>Jumlah</th>
+                        <th>Total Harga</th>
+                        <th>Pembayaran</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelPesanan">
+                    <tr>
+                        <td colspan="7">Belum ada pesanan.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="summary">
+            Total Transaksi: <span id="totalTransaksi">Rp0</span>
+        </h3>
+    </section>
+
+    <footer>
+        <p>© 2026 FoodieGo - Website Pemesanan Makanan</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
